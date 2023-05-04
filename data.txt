@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS `myTable`;
+
+CREATE TABLE `myTable` (
+  `id` mediumint(8) unsigned NOT NULL auto_increment,
+  `name` varchar(255) default NULL,
+  `phone` varchar(100) default NULL,
+  `email` varchar(255) default NULL,
+  `postalZip` varchar(10) default NULL,
+  `country` varchar(100) default NULL,
+  PRIMARY KEY (`id`)
+) AUTO_INCREMENT=1;
+
+INSERT INTO `myTable` (`name`,`phone`,`email`,`postalZip`,`country`)
+VALUES
+  ("Alvin Prince","(771) 862-6407","consequat@protonmail.org","72787-65311","Vietnam"),
+  ("Herrod Workman","(439) 242-4016","pede.praesent@hotmail.com","5114","Indonesia"),
+  ("Lilah Casey","(403) 938-8235","nec.ante.blandit@google.com","75678","Sweden"),
+  ("Hedley Buck","(373) 264-5327","egestas.ligula@outlook.org","896833","China"),
+  ("Britanney Gay","(875) 349-7632","nullam.scelerisque@hotmail.net","788665","Italy");
