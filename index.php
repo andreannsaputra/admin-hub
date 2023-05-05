@@ -1,8 +1,7 @@
 <?php
+include "functions.php";
 
-$conn = mysqli_connect("localhost", "root", "", "adminhub");
-
-$myTable = mysqli_query($conn, "SELECT * FROM mytable");
+$data = query("SELECT * FROM mytable");
 
 ?>
 
@@ -47,7 +46,7 @@ $myTable = mysqli_query($conn, "SELECT * FROM mytable");
                     <th>Edit</th>
                 </tr>
                 <?php $i = 1; ?>
-                <?php while ($row = mysqli_fetch_assoc($myTable)) : ?>
+                <?php foreach ($data as $row) : ?>
                     <tr>
                         <td><?= $i; ?></td>
                         <td><?= $row["name"]; ?></td>
@@ -58,7 +57,7 @@ $myTable = mysqli_query($conn, "SELECT * FROM mytable");
                         <td><a href="#">Update</a> | <a href="#">Delete</a></td>
                     </tr>
                     <?php $i++; ?>
-                <?php endwhile; ?>
+                <?php endforeach; ?>
             </table>
         </div>
     </section>
