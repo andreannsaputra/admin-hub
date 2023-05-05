@@ -1,5 +1,5 @@
 <?php
-include "functions.php";
+require "functions.php";
 
 $data = query("SELECT * FROM mytable");
 
@@ -31,6 +31,9 @@ $data = query("SELECT * FROM mytable");
                 </ul>
                 <ul>
                     <input type="submit" value="Search" />
+                </ul>
+                <ul>
+                    <a href="util/registration.php"> Add Data</a>
                 </ul>
             </li>
         </div>
