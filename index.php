@@ -19,26 +19,30 @@ $data = query("SELECT * FROM mytable");
 </head>
 
 <body>
-    <section>
-        <h1>Admin</h1>
-    </section>
-    <section>
-        <div class="search">
-            <li>
-                <ul>
+
+    <div class="container">
+        <header>
+            <h1>Admin</h1>
+        </header>
+        <main>
+            <ul class="search">
+                <li>
                     <form action="" method="get"></form>
                     <input type="text" class="input" placeholder="Search" />
-                </ul>
-                <ul>
-                    <input type="submit" value="Search" />
-                </ul>
-                <ul>
-                    <a href="util/registration.php"> Add Data</a>
-                </ul>
-            </li>
-        </div>
-        <div class="table">
-            <table>
+                </li>
+                <li>
+                    <button type="submit">Search</button>
+                </li>
+            </ul>
+            <ul class="regis">
+                <li>
+                    <a href="util/registration.php">
+                        <button>+ Registration</button>
+                    </a>
+
+                </li>
+            </ul>
+            <table class="table">
                 <tr>
                     <th>No</th>
                     <th>Name</th>
@@ -62,8 +66,13 @@ $data = query("SELECT * FROM mytable");
                     <?php $i++; ?>
                 <?php endforeach; ?>
             </table>
-        </div>
-    </section>
+        </main>
+        <footer>
+            <p>Made by andre</p>
+        </footer>
+
+    </div>
+
 </body>
 
 </html>
