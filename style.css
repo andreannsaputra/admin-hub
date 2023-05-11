@@ -62,6 +62,11 @@ main ul {
   text-decoration: none;
   font-size: 12px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.regis li a button:hover {
+  background-color: #3f9142;
 }
 
 .table {

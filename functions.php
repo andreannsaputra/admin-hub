@@ -14,7 +14,7 @@ function query($query)
     return $rows;
 };
 
-function regis($data)
+function insert($data)
 {
     global $conn;
 
@@ -28,6 +28,16 @@ function regis($data)
                 VALUES
                 ('', '$name', '$phone','$email','$postalZip','$country')
             ";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+};
+
+function delete($id)
+{
+    global $conn;
+    $query = "DELETE FROM myTable WHERE id = $id";
 
     mysqli_query($conn, $query);
 

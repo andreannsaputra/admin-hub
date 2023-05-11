@@ -36,7 +36,7 @@ $data = query("SELECT * FROM mytable");
             </ul>
             <ul class="regis">
                 <li>
-                    <a href="util/registration.php">
+                    <a href="util/insert.php">
                         <button>+ Registration</button>
                     </a>
 
@@ -61,7 +61,7 @@ $data = query("SELECT * FROM mytable");
                         <td><?= $row["email"]; ?></td>
                         <td><?= $row["postalZip"]; ?></td>
                         <td><?= $row["country"]; ?></td>
-                        <td><a href="#">Update</a> | <a href="#">Delete</a></td>
+                        <td><a href="#">Update</a> | <a href="util/delete.php?id=<?= $row["id"]; ?>" onclick="return confirm('Are you sure ?');">Delete</a></td>
                     </tr>
                     <?php $i++; ?>
                 <?php endforeach; ?>
