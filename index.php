@@ -61,7 +61,9 @@ $data = query("SELECT * FROM mytable");
                         <td><?= $row["email"]; ?></td>
                         <td><?= $row["postalZip"]; ?></td>
                         <td><?= $row["country"]; ?></td>
-                        <td><a href="#">Update</a> | <a href="util/delete.php?id=<?= $row["id"]; ?>" onclick="return confirm('Are you sure ?');">Delete</a></td>
+                        <td><a href="util/update.php?id=<?= $row["id"]; ?>">Update</a> |
+                            <a href="util/delete.php?id=<?= $row["id"]; ?>" onclick="return confirm('Are you sure ?');">Delete</a>
+                        </td>
                     </tr>
                     <?php $i++; ?>
                 <?php endforeach; ?>
