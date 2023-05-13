@@ -68,3 +68,14 @@ function update($data)
 
     return mysqli_affected_rows($conn);
 };
+
+function search($keyword)
+{
+    $query = "SELECT * FROM myTable WHERE 
+    name LIKE '%$keyword%' OR
+    phone LIKE '%$keyword%' OR
+    email LIKE '%$keyword%' OR
+    country LIKE '%$keyword%'
+                ";
+    return query($query);
+}

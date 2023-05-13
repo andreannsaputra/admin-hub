@@ -3,6 +3,10 @@ require "functions.php";
 
 $data = query("SELECT * FROM mytable");
 
+if (isset($_POST["search"])) {
+    $data = search($_POST["keyword"]);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,11 +31,10 @@ $data = query("SELECT * FROM mytable");
         <main>
             <ul class="search">
                 <li>
-                    <form action="" method="get"></form>
-                    <input type="text" class="input" placeholder="Search" />
-                </li>
-                <li>
-                    <button type="submit">Search</button>
+                    <form action="" method="post">
+                        <input type="text" name="keyword" placeholder="Search" autocomplete />
+                        <button type="submit" name="search">Search</button>
+                    </form>
                 </li>
             </ul>
             <ul class="regis">

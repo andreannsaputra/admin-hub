@@ -53,6 +53,10 @@ main ul {
   border-radius: 5px;
 }
 
+.search li button:hover {
+  background-color: #3f9142;
+}
+
 .regis li a button {
   background-color: #4caf50;
   border: none;
