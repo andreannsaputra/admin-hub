@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["login"])) {
+    header("Location : util/login.php");
+    exit;
+}
+
+
+
 require "functions.php";
 
 $data = query("SELECT * FROM mytable");
@@ -27,6 +36,7 @@ if (isset($_POST["search"])) {
     <div class="container">
         <header>
             <h1>Admin</h1>
+            <a href="util/logout.php">Log Out</a>
         </header>
         <main>
             <ul class="search">
