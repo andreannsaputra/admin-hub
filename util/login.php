@@ -2,6 +2,12 @@
 
 session_start();
 
+// if (isset($_COOKIE['login'])) {
+//     if ($_COOKIE['login'] == 'true') {
+//         $_SESSION['login'] = true;
+//     }
+// }
+
 if (isset($_SESSION["login"])) {
     header("Location : ../index.php");
     exit;
@@ -22,6 +28,10 @@ if (isset($_POST["login"])) {
         if (password_verify($password, $row["password"])) {
 
             $_SESSION["login"] = true;
+
+            // if (isset($_POST['remember'])) {
+            //     setcookie('login', 'true', time() + 60);
+            // };
 
             header("Location: ../index.php");
             exit;
@@ -52,13 +62,17 @@ if (isset($_POST["login"])) {
         <form action="" method="post">
             <ul>
                 <li>
-                    <label for="username">Username :</label>\
+                    <label for="username">Username :</label>
                     <input type="text" name="username" id="username">
                 </li>
                 <li>
-                    <label for="password">Password :</label>\
+                    <label for="password">Password :</label>
                     <input type="password" name="password" id="password">
                 </li>
+                <!-- <li>
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Remember Me</label>
+                </li> -->
                 <li>
                     <button type="submit" name="login">Login</button>
                 </li>
